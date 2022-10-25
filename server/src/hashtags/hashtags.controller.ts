@@ -1,7 +1,4 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { Hashtag } from './entities/hashtags.entity';
-import { HashtagsService } from './hashtags.service';
-
 @Controller('hashtags')
 export class HashtagsController {
   @Get('/')
