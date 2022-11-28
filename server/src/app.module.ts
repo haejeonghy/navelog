@@ -1,7 +1,10 @@
-import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Module } from '@nestjs//common';
 import { UsersModule } from './users/users.module';
 import { PostsModule } from './posts/posts.module';
+import { HashtagsController } from './hashtags/hashtags.controller';
+import { HashtagsService } from './hashtags/hashtags.service';
+import { HashtagsModule } from './hashtags/hashtags.module';
 import 'dotenv/config';
 
 @Module({
@@ -19,8 +22,9 @@ import 'dotenv/config';
     }),
     UsersModule,
     PostsModule,
+    HashtagsModule,
   ],
-  controllers: [],
-  providers: [],
+  controllers: [HashtagsController],
+  providers: [HashtagsService],
 })
 export class AppModule {}
